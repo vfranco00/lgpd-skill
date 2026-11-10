@@ -28,3 +28,4 @@ https://www.in.gov.br/web/dou/-/despacho-decisorio-n-33/2024/pr/anpd-581192714	i
 https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-30-de-23-de-dezembro-de-2025-677947163	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
 https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-31-de-22-de-dezembro-de-2025-677950080	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
 https://www.in.gov.br/web/dou/-/resolucao-n-32-de-26-de-janeiro-de-2026-683334547	in.gov.br não responde ao curl do script (código 000 em 2026-11-09)
+https://dadosabertos.camara.leg.br/api/v2/proposicoes/2487262	dadosabertos.camara.leg.br devolve 503 aos runners do GitHub Actions (em 2026-11-10)
