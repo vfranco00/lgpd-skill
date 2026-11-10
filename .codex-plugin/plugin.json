@@ -1,0 +1,14 @@
+{
+  "name": "lgpd-skill",
+  "version": "0.1.0",
+  "description": "Conformidade com a LGPD (Lei 13.709/2018) e a regulação da ANPD para equipes de software: diagnóstico, bases legais, direitos do titular, incidentes, transferência internacional, operador e contratos, encarregado, IA, crianças e adolescentes, com cada citação conferida na fonte oficial.",
+  "author": {
+    "name": "vfranco00",
+    "url": "https://github.com/vfranco00"
+  },
+  "homepage": "https://github.com/vfranco00/lgpd-skill",
+  "repository": "https://github.com/vfranco00/lgpd-skill",
+  "license": "MIT",
+  "keywords": ["lgpd","privacidade","privacy","anpd","protecao-de-dados","data-protection","compliance","brasil","eca-digital","operador","dpa","ripd"],
+  "skills": "./skills/"
+}

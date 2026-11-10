@@ -1,0 +1,15 @@
+{
+  "name": "lgpd-skill",
+  "owner": {
+    "name": "vfranco00",
+    "url": "https://github.com/vfranco00"
+  },
+  "description": "Conformidade com a LGPD (Lei 13.709/2018) e a regulação da ANPD para equipes de software: diagnóstico, bases legais, direitos do titular, incidentes, transferência internacional, operador e contratos, encarregado, IA, crianças e adolescentes, com cada citação conferida na fonte oficial.",
+  "plugins": [
+    {
+      "name": "lgpd-skill",
+      "source": "./",
+      "description": "Conformidade com a LGPD (Lei 13.709/2018) e a regulação da ANPD para equipes de software: diagnóstico, bases legais, direitos do titular, incidentes, transferência internacional, operador e contratos, encarregado, IA, crianças e adolescentes, com cada citação conferida na fonte oficial."
+    }
+  ]
+}

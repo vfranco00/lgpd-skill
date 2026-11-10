@@ -1,0 +1,71 @@
+name: validar
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+# Actions fixadas pelo SHA do commit, com a versão em comentário; ferramentas com versão fixa.
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Lint das skills
+        if: ${{ !cancelled() }}
+        run: bash scripts/lint-skills.sh
+
+      - name: Citações têm fonte
+        if: ${{ !cancelled() }}
+        run: bash scripts/conferir-citacoes.sh
+
+      - name: Matriz de cobertura
+        if: ${{ !cancelled() }}
+        run: bash scripts/conferir-matriz.sh
+
+      - name: Testes dos scripts
+        if: ${{ !cancelled() }}
+        run: |
+          shopt -s nullglob
+          for teste in scripts/testes/*.test.sh; do
+            bash "$teste"
+          done
+
+      - name: Fontes respondem
+        if: ${{ !cancelled() }}
+        run: bash scripts/verificar-fontes.sh
+
+      - name: Padrões dos graders
+        if: ${{ !cancelled() }}
+        run: |
+          shopt -s nullglob
+          for teste in scripts/testes/graders/*.mjs; do
+            node "$teste"
+          done
+
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        if: ${{ !cancelled() }}
+        with:
+          version: "0.12.5"
+
+      - name: shellcheck
+        if: ${{ !cancelled() }}
+        run: uvx --from shellcheck-py==0.11.0.1 shellcheck scripts/*.sh scripts/testes/*.sh
+
+      - name: skills-ref validate
+        if: ${{ !cancelled() }}
+        run: |
+          shopt -s nullglob
+          for pasta in skills/*/; do
+            uvx --from 'git+https://github.com/agentskills/agentskills@83021e2be457a9b6679148719c1f6074f0ad975e#subdirectory=skills-ref' skills-ref validate "$pasta"
+          done
+
+      - name: claude plugin validate
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: npm install -g @anthropic-ai/claude-code@2.1.312 && claude plugin validate --strict .

@@ -1,0 +1,8 @@
+# Termos que nenhum arquivo do repositório pode conter (erros de conteúdo deste repositório), um por linha.
+# O lint-skills.sh ignora linhas vazias e linhas que começam com #.
+# Termos que não podem ficar no repositório vão numa lista à parte: TERMOS_PRIVADOS=<arquivo> bash scripts/lint-skills.sh
+2 milhões de titulares
+consulta prévia à ANPD
+art. 39, § 1º
+art. 39, §1º
+Autoridade Nacional de Proteção de Dados (ANPD)
